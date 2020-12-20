@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert' show utf8;
 
 import 'package:ethanol_content_final_app/icons.dart';
+import 'package:ethanol_content_final_app/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
@@ -179,7 +180,37 @@ class _JoyPadState extends State<JoyPad> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             RawMaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                if (isConnected == true) {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return StreamBuilder<List<int>>(
+                          stream: stream,
+                          builder: (context, snapshot) {
+                            var currentValue;
+                            var device;
+                            if (snapshot.hasError)
+                              return Text('Error: ${snapshot.error}');
+
+                            if (snapshot.connectionState ==
+                                    ConnectionState.active &&
+                                snapshot.data.length > 0) {
+                              currentValue = _dataParser(snapshot.data);
+                              print(currentValue);
+                              device = targetDevice;
+                            } else {
+                              currentValue = null;
+                              device = null;
+                            }
+                            return SettingPopUp(
+                              data: currentValue,
+                            );
+                          });
+                    },
+                  );
+                }
+              },
               elevation: 2.0,
               fillColor: Colors.grey[500],
               child: Icon(
@@ -339,9 +370,13 @@ class Home extends StatelessWidget {
                           Text(
                             (this.data == null
                                 ? "--"
-                                : (int.parse(
-                                        this.data.toString().split(',')[0]))
-                                    .toString()),
+                                : "E" +
+                                    (int.parse(this
+                                                .data
+                                                .toString()
+                                                .split(',')[0]) -
+                                            50)
+                                        .toString()),
                             style: TextStyle(
                               fontSize: 50,
                               color: Colors.white70,
