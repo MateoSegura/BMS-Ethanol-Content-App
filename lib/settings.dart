@@ -21,28 +21,28 @@ class _SettingPopUpState extends State<SettingPopUp> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      content: Stack(
-        alignment: Alignment.center,
-        overflow: Overflow.visible,
-        children: <Widget>[
-          Positioned(
-            right: -40.0,
-            top: -40.0,
-            child: InkResponse(
-              onTap: () {
-                myController.clear();
-                Navigator.of(context).pop();
-              },
-              child: CircleAvatar(
-                child: Icon(Icons.close),
-                backgroundColor: Colors.red,
+      content: Container(
+        height: MediaQuery.of(context).size.height / 5,
+        width: MediaQuery.of(context).size.width / 0.1,
+        child: Stack(
+          alignment: Alignment.center,
+          overflow: Overflow.visible,
+          children: <Widget>[
+            Positioned(
+              right: -40.0,
+              top: -40.0,
+              child: InkResponse(
+                onTap: () {
+                  myController.clear();
+                  Navigator.of(context).pop();
+                },
+                child: CircleAvatar(
+                  child: Icon(Icons.close),
+                  backgroundColor: Colors.red,
+                ),
               ),
             ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width / 2,
-            height: MediaQuery.of(context).size.height / 2,
-            child: Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 // Text(
@@ -54,8 +54,10 @@ class _SettingPopUpState extends State<SettingPopUp> {
                   children: [
                     Text(
                       "Frequency: ",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green[900]),
                     ),
                     Text(
                       (widget.data == null
@@ -78,16 +80,16 @@ class _SettingPopUpState extends State<SettingPopUp> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Voltage: ",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                      "Pulse Width: ",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.deepOrange),
                     ),
                     Text(
                       (widget.data == null
                           ? "--"
-                          : (double.parse(
-                                      widget.data.toString().split(',')[2]) /
-                                  1000)
+                          : (double.parse(widget.data.toString().split(',')[1]))
                               .toStringAsPrecision(3)),
                       style: TextStyle(
                         fontSize: 20,
@@ -95,7 +97,7 @@ class _SettingPopUpState extends State<SettingPopUp> {
                       ),
                     ),
                     Text(
-                      " V",
+                      " ms",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
@@ -103,8 +105,8 @@ class _SettingPopUpState extends State<SettingPopUp> {
                 )
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
