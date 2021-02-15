@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		C67KNmhFO0A9uiDxkJfX46pD7P0=
+		bacpYJEZn4Warg49g02/pREu5PE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES</key>
 		<data>
-		Yf9NXvkPxfyPE7kAgExKFmYrJg0=
+		7WXzySxp6gK1fd9XUqtPrnuKqeY=
 		</data>
 		<key>flutter_assets/assets/icons/fuelIcon.ttf</key>
 		<data>
@@ -46,15 +46,15 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		IFA8wpsYhsgLNUd9Ts9Z1VaOxt8=
+		W2e3VkEQYzQiFdLh/Bi5Ob+8YKI=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		WF72LYZEk1sPXycF2ULWGBz6Qec=
+		3suwcgxMBi0LhejX2yms89CP3as=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		PVqFLmX9s4tyV1YTHpe6dp/PVWU=
+		48wiuHnlzYQvo/HpvV8dQ6OhATs=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -63,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C67KNmhFO0A9uiDxkJfX46pD7P0=
+			bacpYJEZn4Warg49g02/pREu5PE=
 			</data>
 			<key>hash2</key>
 			<data>
-			syPtCrvtC9ANH8MnbQRwI54wEk6fEbsaETOOf/oSGek=
+			br9lM8NaTmNrKUsKeOuk9vmiWcL5qxeHFR5CF9UaBrs=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -85,11 +85,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Yf9NXvkPxfyPE7kAgExKFmYrJg0=
+			7WXzySxp6gK1fd9XUqtPrnuKqeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			O5tbBUwhvXw6zzz01fu+Q7wPn+ZkMnJjy9TKmsfiwVA=
+			Z22qdn0FyVjjF6JWgw6ovDS9llw2MPpgHtHAEK9hmGk=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/fuelIcon.ttf</key>
@@ -162,33 +162,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IFA8wpsYhsgLNUd9Ts9Z1VaOxt8=
+			W2e3VkEQYzQiFdLh/Bi5Ob+8YKI=
 			</data>
 			<key>hash2</key>
 			<data>
-			jeNLJ5XygNyvkmx9Um7tJKZk8pFo+JKqChC0fW7Ykc0=
+			BrSKjcJD7nuPyfTPpHZNWZteJJdYImRhUlFEwI+6STk=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WF72LYZEk1sPXycF2ULWGBz6Qec=
+			3suwcgxMBi0LhejX2yms89CP3as=
 			</data>
 			<key>hash2</key>
 			<data>
-			73HGboprWVJnA7C/b4ncInDkt71QiaID4TmhVH0QVMU=
+			3DrT9nxFIAx9DYs1Fau0o02HtAtCllaH8OUqdHRVqeM=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PVqFLmX9s4tyV1YTHpe6dp/PVWU=
+			48wiuHnlzYQvo/HpvV8dQ6OhATs=
 			</data>
 			<key>hash2</key>
 			<data>
-			+gHgpOEYHGeYAtvKDiRw/YC9zBJOfsyqEN9priH9ieU=
+			Fh95LadxcIxjVY+f6VA3HDyGtA7vGGUACjhlQBemy+c=
 			</data>
 		</dict>
 	</dict>

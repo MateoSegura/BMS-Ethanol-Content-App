@@ -39,13 +39,12 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   // ignore: non_constant_identifier_names
   final String SERVICE_UUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
   // ignore: non_constant_identifier_names
   final String CHARACTERISTIC_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
   // ignore: non_constant_identifier_names
-  final String TARGET_DEVICE_NAME = "Billet Motorsport ECU001";
+  final String TARGET_DEVICE_NAME = "ESP32 BLE Example";
 
   FlutterBlue flutterBlue = FlutterBlue.instance;
   BluetoothDevice targetDevice;
@@ -63,17 +62,17 @@ class _MainPageState extends State<MainPage> {
   }
 
   startScan() {
-      print("Started Bluetooth Scan");
-      scanSubScription =
-          flutterBlue.scan().asBroadcastStream().listen((scanResult) {
-        print(scanResult.device);
-        if (scanResult.device.name == TARGET_DEVICE_NAME) {
-          print('DEVICE found');
-          stopScan();
-          targetDevice = scanResult.device;
-          connectToDevice();
-        }
-      }, onDone: () => stopScan());
+    print("Started Bluetooth Scan");
+    scanSubScription =
+        flutterBlue.scan().asBroadcastStream().listen((scanResult) {
+      print(scanResult.device);
+      if (scanResult.device.name == TARGET_DEVICE_NAME) {
+        print('DEVICE found');
+        stopScan();
+        targetDevice = scanResult.device;
+        connectToDevice();
+      }
+    }, onDone: () => stopScan());
   }
 
   stopScan() {
@@ -144,26 +143,26 @@ class _MainPageState extends State<MainPage> {
                     context: context,
                     builder: (BuildContext context) {
                       return StreamBuilder<List<int>>(
-                          stream: stream,
-                          builder: (context, snapshot) {
-                            var currentValue;
+                        stream: stream,
+                        builder: (context, snapshot) {
+                          var currentValue;
 
-                            if (snapshot.hasError)
-                              return Text('Error: ${snapshot.error}');
+                          if (snapshot.hasError)
+                            return Text('Error: ${snapshot.error}');
 
-                            if (snapshot.connectionState ==
-                                    ConnectionState.active &&
-                                snapshot.data.length > 0) {
-                              currentValue = _dataParser(snapshot.data);
-                              print(currentValue);
-                            } else {
-                              currentValue = null;
-                            }
-                            return SettingPopUp(
-                              data: currentValue,
-                            );
-                          },
+                          if (snapshot.connectionState ==
+                                  ConnectionState.active &&
+                              snapshot.data.length > 0) {
+                            currentValue = _dataParser(snapshot.data);
+                            print(currentValue);
+                          } else {
+                            currentValue = null;
+                          }
+                          return SettingPopUp(
+                            data: currentValue,
                           );
+                        },
+                      );
                     },
                   );
                 }
@@ -264,4 +263,3 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
-

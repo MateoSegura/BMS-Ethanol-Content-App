@@ -26,7 +26,6 @@ class _SettingPopUpState extends State<SettingPopUp> {
         width: MediaQuery.of(context).size.width / 0.1,
         child: Stack(
           alignment: Alignment.center,
-          overflow: Overflow.visible,
           children: <Widget>[
             Positioned(
               right: -40.0,
@@ -53,7 +52,7 @@ class _SettingPopUpState extends State<SettingPopUp> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Frequency: ",
+                      "Value a: ",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -69,18 +68,13 @@ class _SettingPopUpState extends State<SettingPopUp> {
                         color: Colors.black,
                       ),
                     ),
-                    Text(
-                      " Hz",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Pulse Width: ",
+                      "Value b: ",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -89,17 +83,12 @@ class _SettingPopUpState extends State<SettingPopUp> {
                     Text(
                       (widget.data == null
                           ? "--"
-                          : (double.parse(widget.data.toString().split(',')[1]))
-                              .toStringAsPrecision(3)),
+                          : (int.parse(widget.data.toString().split(',')[1]))
+                              .toString()),
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
                       ),
-                    ),
-                    Text(
-                      " ms",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                   ],
                 )
@@ -111,5 +100,3 @@ class _SettingPopUpState extends State<SettingPopUp> {
     );
   }
 }
-
-class FolderListTile {}
